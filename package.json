@@ -1,23 +1,50 @@
 {
   "name": "react-css-styler",
   "version": "0.1.0",
-  "private": true,
+  "description": "This component is a lightweight, simple line style component.",
+  "main": "./dist/styler.cjs.js",
+  "module": "./dist/styler.esm.js",
+  "sideEffects": false,
+  "types": "declaration/index.d.ts",
+  "keywords": [
+    "styled",
+    "inline-style",
+    "styled-components",
+    "style",
+    "css",
+    "styler"
+  ],
   "dependencies": {
-    "@types/jest": "24.0.14",
+    "@daybrush/utils": "^0.10.0",
     "@types/node": "12.0.8",
     "@types/react": "16.8.20",
     "@types/react-dom": "16.8.4",
+    "@types/string-hash": "^1.1.1",
+    "string-hash": "^1.1.3"
+  },
+  "devDependencies": {
+    "@daybrush/builder": "^0.1.1",
+    "print-sizes": "0.0.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
-    "typescript": "3.5.2"
+    "react-scripts": "^3.0.1",
+    "typescript": "^3.5.2"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "rollup -c && npm run declaration && print-sizes ./dist ",
+    "declaration": "rm -rf declaration && tsc -p tsconfig.declaration.json"
   },
+  "author": "Daybrush",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daybrush/react-css-styler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/daybrush/react-css-styler/issues"
+  },
+  "homepage": "https://github.com/daybrush/react-css-styler#readme",
   "eslintConfig": {
     "extends": "react-app"
   },

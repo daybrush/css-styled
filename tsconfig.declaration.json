@@ -10,6 +10,6 @@
         "declarationDir": "declaration"
     },
     "include": [
-        "./src/**/*"
+        "./src/react-css-styler/*"
     ]
 }

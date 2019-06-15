@@ -1,19 +1,30 @@
 
 import builder from "@daybrush/builder";
 
+
+const external = {
+    "react": "react",
+    "@daybrush/utils": "utils",
+};
 export default builder([
     {
         tsconfig: "tsconfig.build.json",
-        input: "src/PureProps.tsx",
-        output: "./dist/pure-props.esm.js",
+        input: "src/react-css-styler/index.tsx",
+        output: "./dist/styler.esm.js",
         exports: "default",
         format: "es",
+        commonjs: true,
+        resolve: true,
+        external,
     },
     {
         tsconfig: "tsconfig.build.json",
-        input: "src/PureProps.tsx",
-        output: "./dist/pure-props.cjs.js",
+        input: "src/react-css-styler/index.tsx",
+        output: "./dist/styler.cjs.js",
         exports: "default",
         format: "cjs",
+        commonjs: true,
+        resolve: true,
+        external,
     },
 ]);
