@@ -18,7 +18,7 @@ export default function styled(Tag: keyof JSX.IntrinsicElements = "div", css: st
         ...attributes
       } = this.props;
 
-      return <Tag {...attributes} />;
+      return <Tag className={className + " " + injectClassName} {...attributes} />;
     }
     public componentDidMount() {
       if (injectCount === 0) {
