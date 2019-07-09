@@ -9,7 +9,7 @@ const external = {
 export default builder([
     {
         tsconfig: "tsconfig.build.json",
-        input: "src/react-css-styler/index.tsx",
+        input: "src/react-css-styler/index.ts",
         output: "./dist/styler.esm.js",
         exports: "default",
         format: "es",
@@ -19,7 +19,7 @@ export default builder([
     },
     {
         tsconfig: "tsconfig.build.json",
-        input: "src/react-css-styler/index.tsx",
+        input: "src/react-css-styler/index.ts",
         output: "./dist/styler.cjs.js",
         exports: "default",
         format: "cjs",

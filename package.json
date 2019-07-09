@@ -1,6 +1,6 @@
 {
   "name": "react-css-styler",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "This component is a lightweight, simple line style component.",
   "main": "./dist/styler.cjs.js",
   "module": "./dist/styler.esm.js",
