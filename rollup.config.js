@@ -3,7 +3,8 @@ import builder from "@daybrush/builder";
 
 
 const external = {
-    "react": "react",
+    "react": "React",
+    "react-dom": "ReactDOM",
     "@daybrush/utils": "utils",
 };
 export default builder([

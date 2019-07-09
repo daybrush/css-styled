@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { getHash, injectStyle } from "./utils";
 import { StylerElement } from "./types";
 
-export default function styled(Tag: keyof JSX.IntrinsicElements = "div", css: string) {
+export default function styled<T extends keyof JSX.IntrinsicElements = "div">(Tag: T, css: string) {
   const injectClassName = "rCS" + getHash(css);
   let injectCount = 0;
   let injectElement!: HTMLStyleElement;
@@ -11,7 +11,7 @@ export default function styled(Tag: keyof JSX.IntrinsicElements = "div", css: st
   return class Styler extends React.Component<{
     [key: string]: any,
   }> {
-    public element!: StylerElement<typeof Tag>;
+    public element!: StylerElement<T>;
     constructor(props: any) {
       super(props);
     }
@@ -21,7 +21,10 @@ export default function styled(Tag: keyof JSX.IntrinsicElements = "div", css: st
         ...attributes
       } = this.props;
 
-      return <Tag className={className + " " + injectClassName} {...attributes} />;
+      return React.createElement(Tag, {
+        className: `${className} ${injectClassName}`,
+        ...attributes,
+      });
     }
     public componentDidMount() {
       if (injectCount === 0) {
@@ -36,8 +39,8 @@ export default function styled(Tag: keyof JSX.IntrinsicElements = "div", css: st
         injectElement.parentNode!.removeChild(injectElement);
       }
     }
-    public getElement(): StylerElement<typeof Tag> {
-        return this.element || (this.element = ReactDOM.findDOMNode(this) as StylerElement<typeof Tag>);
+    public getElement() {
+      return this.element || (this.element = ReactDOM.findDOMNode(this) as StylerElement<T>);
     }
   }
 }
