@@ -9,7 +9,11 @@ export function injectStyle(className: string, css: string) {
 
   style.setAttribute("type", "text/css");
   style.innerHTML = css.replace(/([^}{]*){/mg, (all, selector) => {
-    return splitComma(selector).map(subSelector => `.${className} ${subSelector}`).join(", ") + "{";
+    return splitComma(selector).map(subSelector => 
+      subSelector.indexOf(":host") > - 1
+      ? `${subSelector.replace(/\:host/g, `.${className}`)}`
+      : `.${className} ${subSelector}`
+    ).join(", ") + "{";
   });
 
   (document.head || document.body).appendChild(style);
