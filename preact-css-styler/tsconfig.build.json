@@ -2,6 +2,6 @@
   "extends": "./tsconfig",
   "compilerOptions": {
     "jsx": "react",
-    "jsxFactory": "h",
+    "jsxFactory": "h"
   },
 }
