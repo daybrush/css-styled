@@ -1,5 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import { Component, createElement } from "react";
+import { findDOMNode } from "react-dom";
 import { getHash, injectStyle } from "./utils";
 import { StylerElement } from "./types";
 
@@ -8,7 +8,7 @@ export default function styled<T extends keyof JSX.IntrinsicElements = "div">(Ta
   let injectCount = 0;
   let injectElement!: HTMLStyleElement;
 
-  return class Styler extends React.Component<{
+  return class Styler extends Component<{
     [key: string]: any,
   }> {
     public element!: StylerElement<T>;
@@ -21,7 +21,7 @@ export default function styled<T extends keyof JSX.IntrinsicElements = "div">(Ta
         ...attributes
       } = this.props;
 
-      return React.createElement(Tag, {
+      return createElement(Tag, {
         className: `${className} ${injectClassName}`,
         ...attributes,
       });
@@ -40,7 +40,7 @@ export default function styled<T extends keyof JSX.IntrinsicElements = "div">(Ta
       }
     }
     public getElement() {
-      return this.element || (this.element = ReactDOM.findDOMNode(this) as StylerElement<T>);
+      return this.element || (this.element = findDOMNode(this) as StylerElement<T>);
     }
   }
 }

@@ -39,7 +39,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/daybrush/react-css-styler.git"
+    "url": "https://github.com/daybrush/css-styler/tree/master/react-css-styler"
   },
   "bugs": {
     "url": "https://github.com/daybrush/react-css-styler/issues"
