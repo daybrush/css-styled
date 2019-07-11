@@ -33,7 +33,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "rollup -c && npm run declaration && print-sizes ./dist ",
-    "declaration": "rm -rf declaration && tsc -p tsconfig.declaration.json"
+    "declaration": "rm -rf declaration && tsc -p tsconfig.declaration.json",
+    "convert": "react-to-preact -p ../preact-css-styler"
   },
   "author": "Daybrush",
   "license": "MIT",
