@@ -1,5 +1,4 @@
 import styled from "react-css-styler";
-import { IObject } from "@daybrush/utils";
 import { StylerInterface } from "./types";
 
 
