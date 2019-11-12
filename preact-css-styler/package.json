@@ -1,6 +1,6 @@
 {
     "name": "preact-css-styler",
-    "version": "0.4.1",
+    "version": "1.0.0",
     "description": "This component is a lightweight, simple line style component.",
     "main": "./dist/styler.cjs.js",
     "module": "./dist/styler.esm.js",
@@ -16,16 +16,16 @@
         "preact"
     ],
     "dependencies": {
-        "@daybrush/utils": "^0.10.0",
-        "preact-compat": "^3.19.0"
+        "@daybrush/utils": "^0.10.1"
     },
     "devDependencies": {
-        "@daybrush/builder": "^0.1.1",
-        "preact": "^8.4.2",
+        "@daybrush/builder": "^0.1.2",
+        "rollup": "^1.27.0",
+        "preact": "^10.0.0",
         "print-sizes": "0.0.4",
         "react-css-styler": "^0.4.0",
         "rollup-plugin-css-bundle": "^1.0.4",
-        "rollup-plugin-preact": "^0.3.0",
+        "rollup-plugin-preact": "^0.5.2",
         "tslint": "^5.18.0",
         "typescript": "^3.5.2"
     },

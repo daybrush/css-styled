@@ -6,9 +6,7 @@ const preact = require("rollup-plugin-preact");
 const defaultOptions = {
     tsconfig: "tsconfig.build.json",
     external: {
-        "preact": "Preact",
-        "preact-compat": "preact-compat",
-        // "preact-....": "preact-....",
+        "preact": "preact",
     },
     exports: "named",
     plugins: [
@@ -16,9 +14,8 @@ const defaultOptions = {
             noPropTypes: true,
             noEnv: true,
             noReactIs: true,
-            aliasModules: {
-                // "react-....": "preact-....",
-            },
+            usePreactX: true,
+            resolvePreactCompat: true,
         }),
     ],
 };
