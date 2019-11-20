@@ -7,6 +7,7 @@ const defaultOptions = {
     tsconfig: "tsconfig.build.json",
     external: {
         "preact": "preact",
+        "preact/compat": "preact/compat",
     },
     exports: "named",
     plugins: [
@@ -15,7 +16,7 @@ const defaultOptions = {
             noEnv: true,
             noReactIs: true,
             usePreactX: true,
-            resolvePreactCompat: true,
+            // resolvePreactCompat: true,
         }),
     ],
 };
