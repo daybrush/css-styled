@@ -1,6 +1,7 @@
 export interface StyledInjector {
     className: string;
-    inject(el: HTMLElement): {
-        destroy(): void;
-    };
+    inject(el: HTMLElement): InjectResult;
+}
+export interface InjectResult {
+    destroy(): void;
 }

@@ -16,7 +16,7 @@ export default function styled(css: string): StyledInjector {
             if (shadowRoot || firstMount) {
                 styleElement = injectStyle(injectClassName, css);
             }
-            if (firstMount) {
+            if (!shadowRoot) {
                 injectElement = styleElement;
                 ++injectCount;
             }
@@ -38,3 +38,5 @@ export default function styled(css: string): StyledInjector {
         },
     };
 }
+
+export * from "./types";
