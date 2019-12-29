@@ -1,11 +1,11 @@
 {
   "name": "css-styled",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "new project",
   "main": "./dist/styled.cjs.js",
   "module": "./dist/styled.esm.js",
   "sideEffects": false,
-  "types": "declaration/index.d.ts",
+  "types": "declaration/styled.d.ts",
   "scripts": {
     "start": "rollup -c -w",
     "build": "rollup -c && npm run declaration && print-sizes ./dist",
