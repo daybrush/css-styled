@@ -6,12 +6,13 @@ const external = {
     "react": "React",
     "react-dom": "ReactDOM",
     "@daybrush/utils": "utils",
+    "css-styled": "css-styled",
 };
 export default builder([
     {
         tsconfig: "tsconfig.build.json",
         input: "src/react-css-styled/index.ts",
-        output: "./dist/styler.esm.js",
+        output: "./dist/styled.esm.js",
         exports: "default",
         format: "es",
         commonjs: true,
@@ -21,7 +22,7 @@ export default builder([
     {
         tsconfig: "tsconfig.build.json",
         input: "src/react-css-styled/index.ts",
-        output: "./dist/styler.cjs.js",
+        output: "./dist/styled.cjs.js",
         exports: "default",
         format: "cjs",
         commonjs: true,

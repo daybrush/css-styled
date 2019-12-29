@@ -1,46 +1,36 @@
 import { Component, createElement } from "react";
-import { findDOMNode } from "react-dom";
-import { getHash, injectStyle } from "./utils";
-import { StylerElement } from "./types";
+import { IObject } from "@daybrush/utils";
+import { ref } from "framework-utils";
+import cssStyled, { InjectResult } from "css-styled";
 
-export default function styled<T extends keyof JSX.IntrinsicElements = "div">(Tag: T, css: string) {
-  const injectClassName = "rCS" + getHash(css);
-  let injectCount = 0;
-  let injectElement!: HTMLStyleElement;
 
-  return class Styler extends Component<{
-    [key: string]: any,
-  }> {
-    public element!: StylerElement<T>;
-    constructor(props: any) {
-      super(props);
-    }
+export default function styled<T extends HTMLElement | SVGElement = HTMLElement>(Tag: string, css: string) {
+  const injector = cssStyled(css);
+
+  return class Styled extends Component<IObject<any>> {
+    public element!: T;
+    public injectResult!: InjectResult | null;
     public render() {
       const {
-        className,
+        className = "",
         ...attributes
       } = this.props;
 
       return createElement(Tag, {
-        className: `${className} ${injectClassName}`,
+        ref: ref(this, "element"),
+        className: `${className} ${injector.className}`,
         ...attributes,
       });
     }
     public componentDidMount() {
-      if (injectCount === 0) {
-        injectElement = injectStyle(injectClassName, css);
-      }
-      ++injectCount;
+      this.injectResult = injector.inject(this.element);
     }
     public componentWillUnmount() {
-      --injectCount;
-
-      if (injectCount === 0 && injectElement) {
-        injectElement.parentNode!.removeChild(injectElement);
-      }
+      this.injectResult!.destroy();
+      this.injectResult = null;
     }
     public getElement() {
-      return this.element || (this.element = findDOMNode(this) as StylerElement<T>);
+      return this.element;
     }
   }
 }

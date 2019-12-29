@@ -1,5 +1,5 @@
 import styled from "react-css-styled";
-import { StylerInterface } from "./types";
+import { StyledInterface } from "./types";
 
 
-export default styled as (Tag: string, css: string) => new (...args: any[]) => StylerInterface;
+export default styled as (Tag: string, css: string) => new (...args: any[]) => StyledInterface;

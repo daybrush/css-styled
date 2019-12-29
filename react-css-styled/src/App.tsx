@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import styled from './react-css-styled';
+import { ref } from 'framework-utils';
 
 const css = `
 {
@@ -438,11 +439,15 @@ const css = `
 }`;
 
 const Styler = styled("div", css);
+const Styler2 = styled("div", ".a {}");
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Styler/>
+      <Styler ref={ref(window, "a")}/>
+      <Styler ref={ref(window, "b")}/>
+      <Styler2 ref={ref(window, "a2")}/>
+      <Styler2 ref={ref(window, "b2")}/>
     </div>
   );
 }

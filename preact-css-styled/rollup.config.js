@@ -8,6 +8,8 @@ const defaultOptions = {
     external: {
         "preact": "preact",
         "preact/compat": "preact/compat",
+        "@daybrush/utils": "@daybrush/utils",
+        "css-styled": "css-styled",
     },
     exports: "named",
     plugins: [
@@ -25,14 +27,14 @@ export default builder([
     {
         ...defaultOptions,
         input: "src/preact-css-styled/styled.ts",
-        output: "./dist/styler.esm.js",
+        output: "./dist/styled.esm.js",
         exports: "default",
         format: "es",
     },
     {
         ...defaultOptions,
         input: "src/preact-css-styled/styled.ts",
-        output: "./dist/styler.cjs.js",
+        output: "./dist/styled.cjs.js",
         exports: "default",
         format: "cjs",
     },
