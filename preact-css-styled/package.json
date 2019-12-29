@@ -1,5 +1,5 @@
 {
-    "name": "preact-css-styler",
+    "name": "preact-css-styled",
     "version": "1.0.1",
     "description": "This component is a lightweight, simple line style component.",
     "main": "./dist/styler.cjs.js",
@@ -23,7 +23,7 @@
         "rollup": "^1.27.0",
         "preact": "^10.0.0",
         "print-sizes": "0.0.4",
-        "react-css-styler": "^0.4.0",
+        "react-css-styled": "^0.4.0",
         "rollup-plugin-css-bundle": "^1.0.4",
         "rollup-plugin-preact": "^0.5.2",
         "tslint": "^5.18.0",
@@ -38,12 +38,12 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/daybrush/css-styler/tree/master/preact-css-styler"
+        "url": "https://github.com/daybrush/css-styled/tree/master/preact-css-styled"
     },
     "bugs": {
-        "url": "https://github.com/daybrush/preact-css-styler/issues"
+        "url": "https://github.com/daybrush/preact-css-styled/issues"
     },
-    "homepage": "https://github.com/daybrush/preact-css-styler#readme",
+    "homepage": "https://github.com/daybrush/preact-css-styled#readme",
     "eslintConfig": {
         "extends": "preact-app"
     },

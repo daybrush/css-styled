@@ -1,6 +1,6 @@
 import { Component, h } from 'preact';
 import './App.css';
-import styled from '../preact-css-styler';
+import styled from '../preact-css-styled';
 
 const css = `
 {

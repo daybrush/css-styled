@@ -26,7 +26,7 @@
     "docdash": {
         "menu": {
             "Github repo": {
-                "href": "https://github.com/daybrush/css-styler",
+                "href": "https://github.com/daybrush/css-styled",
                 "target": "_blank",
                 "class": "menu-item",
                 "id": "repository"

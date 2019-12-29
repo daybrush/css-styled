@@ -1,16 +1,16 @@
-# preact-css-styler 👋 [![npm version](https://badge.fury.io/js/preact-css-styler.svg)](https://badge.fury.io/js/preact-css-styler)
+# react-css-styled 👋 [![npm version](https://badge.fury.io/js/react-css-styled.svg)](https://badge.fury.io/js/react-css-styled)
 
 This component is a lightweight, simple line style component.
 
 ## Installation
 
 ```sh
-npm install preact-css-styler
+npm install react-css-styled
 ```
 ## How to use
 
 ```jsx
-import styled from "preact-css-styler";
+import styled from "react-css-styled";
 
 const Styler = styled("div", `
 {

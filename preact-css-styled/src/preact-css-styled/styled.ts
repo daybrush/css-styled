@@ -1,4 +1,4 @@
-import styled from "react-css-styler";
+import styled from "react-css-styled";
 import { StylerInterface } from "./types";
 
 

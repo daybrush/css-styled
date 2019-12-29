@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/daybrush/css-styler.git"
+    "url": "git+https://github.com/daybrush/css-styled.git"
   },
   "author": "Daybrush",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/daybrush/css-styler/issues"
+    "url": "https://github.com/daybrush/css-styled/issues"
   },
-  "homepage": "https://github.com/daybrush/css-styler#readme",
+  "homepage": "https://github.com/daybrush/css-styled#readme",
   "dependencies": {
     "@daybrush/utils": "^0.10.1",
     "string-hash": "^1.1.3"

@@ -1,5 +1,5 @@
 {
-  "name": "react-css-styler",
+  "name": "react-css-styled",
   "version": "0.4.1",
   "description": "This component is a lightweight, simple line style component.",
   "main": "./dist/styler.cjs.js",
@@ -39,12 +39,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/daybrush/css-styler/tree/master/react-css-styler"
+    "url": "https://github.com/daybrush/css-styled/tree/master/react-css-styled"
   },
   "bugs": {
-    "url": "https://github.com/daybrush/react-css-styler/issues"
+    "url": "https://github.com/daybrush/react-css-styled/issues"
   },
-  "homepage": "https://github.com/daybrush/react-css-styler#readme",
+  "homepage": "https://github.com/daybrush/react-css-styled#readme",
   "eslintConfig": {
     "extends": "react-app"
   },

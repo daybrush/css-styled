@@ -10,6 +10,6 @@
         "declarationDir": "declaration"
     },
     "include": [
-        "./src/react-css-styler/*"
+        "./src/preact-css-styled/*"
     ]
 }
