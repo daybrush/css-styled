@@ -8,7 +8,7 @@ export default function styled(css: string): StyledInjector {
 
     return {
         className: injectClassName,
-        inject(el: HTMLElement) {
+        inject(el: HTMLElement | SVGElement) {
             const shadowRoot = getShadowRoot(el);
             const firstMount = injectCount === 0;
             let styleElement: HTMLStyleElement;

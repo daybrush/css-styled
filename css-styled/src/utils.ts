@@ -4,7 +4,7 @@ import { splitComma } from "@daybrush/utils";
 export function getHash(str: string) {
   return stringHash(str).toString(36);
 }
-export function getShadowRoot(parentElement: HTMLElement) {
+export function getShadowRoot(parentElement: HTMLElement | SVGElement) {
     if (parentElement.getRootNode) {
         const rootNode = parentElement.getRootNode();
 
