@@ -16,8 +16,10 @@ export default function styled(css: string): StyledInjector {
             if (shadowRoot || firstMount) {
                 styleElement = injectStyle(injectClassName, css);
             }
-            if (!shadowRoot) {
+            if (firstMount) {
                 injectElement = styleElement;
+              }
+            if (!shadowRoot) {
                 ++injectCount;
             }
             return {
@@ -26,8 +28,9 @@ export default function styled(css: string): StyledInjector {
                         el.removeChild(styleElement);
                         styleElement = null;
                     } else {
-                        --injectCount;
-
+                        if (injectCount > 0) {
+                            --injectCount;
+                        }
                         if (injectCount === 0 && injectElement) {
                             injectElement.parentNode!.removeChild(injectElement);
                             injectElement = null;
