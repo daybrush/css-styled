@@ -21,6 +21,7 @@ const defaultOptions = {
             // resolvePreactCompat: true,
         }),
     ],
+    sourcemap: false,
 };
 
 export default builder([
