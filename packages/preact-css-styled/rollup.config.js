@@ -10,6 +10,7 @@ const defaultOptions = {
         "preact/compat": "preact/compat",
         "@daybrush/utils": "@daybrush/utils",
         "css-styled": "css-styled",
+        "framework-utils": "framework-utils",
     },
     exports: "named",
     plugins: [

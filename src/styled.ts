@@ -14,7 +14,7 @@ export default function styled(css: string): StyledInjector {
             let styleElement: HTMLStyleElement;
 
             if (shadowRoot || firstMount) {
-                styleElement = injectStyle(injectClassName, css);
+                styleElement = injectStyle(injectClassName, css, shadowRoot);
             }
             if (firstMount) {
                 injectElement = styleElement;

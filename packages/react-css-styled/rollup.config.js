@@ -15,8 +15,6 @@ export default builder([
         output: "./dist/styled.esm.js",
         exports: "default",
         format: "es",
-        commonjs: true,
-        resolve: true,
         external,
     },
     {
@@ -25,8 +23,6 @@ export default builder([
         output: "./dist/styled.cjs.js",
         exports: "default",
         format: "cjs",
-        commonjs: true,
-        resolve: true,
         external,
     },
 ]);

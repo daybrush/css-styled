@@ -12,8 +12,8 @@ outjs/
 declaration/
 build/
 .vscode/
-packages/*/dist/
 rollup-plugin-visualizer/
 statistics/
 .scene_cache
 *.mp4
+test/

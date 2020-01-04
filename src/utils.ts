@@ -14,7 +14,7 @@ export function getShadowRoot(parentElement: HTMLElement | SVGElement) {
     }
     return;
 }
-export function injectStyle(className: string, css: string, shadowRoot?: HTMLElement) {
+export function injectStyle(className: string, css: string, shadowRoot?: Node) {
   const style = document.createElement("style");
 
   style.setAttribute("type", "text/css");
