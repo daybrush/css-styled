@@ -1,0 +1,51 @@
+{
+    "name": "react-compat-css-styled",
+    "version": "0.1.0",
+    "description": "This component is a lightweight, simple line style component for react-compat",
+    "main": "./dist/styled.cjs.js",
+    "module": "./dist/styled.esm.js",
+    "sideEffects": false,
+    "types": "declaration/index.d.ts",
+    "keywords": [
+        "styled",
+        "inline-style",
+        "styled-components",
+        "style",
+        "css",
+        "styler"
+    ],
+    "scripts": {
+        "build": "rollup -c && npm run declaration && print-sizes ./dist",
+        "declaration": "rm -rf declaration && tsc -p tsconfig.declaration.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/daybrush/css-styled.git"
+    },
+    "author": "Daybrush",
+    "bugs": {
+        "url": "https://github.com/daybrush/css-styled/issues"
+    },
+    "homepage": "https://github.com/daybrush/css-styled#readme",
+    "license": "MIT",
+    "dependencies": {
+        "@types/react": "^16.0.0",
+        "css-styled": "^0.1.7",
+        "react-css-styled": "^0.1.4",
+        "react-simple-compat": "^0.1.0"
+    },
+    "peerDependencies": {
+        "react-simple-compat": ">=0.1.0",
+        "css-styled": ">=0.1.7",
+        "react-css-styled": ">=0.1.4",
+        "framework-utils": ">=0.3.4"
+    },
+    "devDependencies": {
+        "@daybrush/builder": "^0.1.2",
+        "print-sizes": "^0.1.0",
+        "rollup": "^1.29.0",
+        "rollup-plugin-react-compat": "^0.1.0",
+        "tslint": "^5.20.1",
+        "typescript": "^3.7.4"
+    }
+}
