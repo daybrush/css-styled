@@ -1,6 +1,6 @@
 {
     "name": "react-compat-css-styled",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "This component is a lightweight, simple line style component for react-compat",
     "main": "./dist/styled.cjs.js",
     "module": "./dist/styled.esm.js",
@@ -32,7 +32,7 @@
         "@types/react": "^16.0.0",
         "css-styled": "^0.1.7",
         "react-css-styled": "^0.1.4",
-        "react-simple-compat": "^0.1.0"
+        "react-simple-compat": "^0.1.1"
     },
     "peerDependencies": {
         "react-simple-compat": ">=0.1.0",
