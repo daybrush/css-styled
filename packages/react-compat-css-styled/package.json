@@ -1,6 +1,6 @@
 {
     "name": "react-compat-css-styled",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "This component is a lightweight, simple line style component for react-compat",
     "main": "./dist/styled.cjs.js",
     "module": "./dist/styled.esm.js",
@@ -29,7 +29,6 @@
     "homepage": "https://github.com/daybrush/css-styled#readme",
     "license": "MIT",
     "dependencies": {
-        "@types/react": "^16.0.0",
         "react-css-styled": "^0.1.4",
         "react-simple-compat": "^0.1.1"
     },
@@ -40,6 +39,7 @@
         "framework-utils": ">=0.3.4"
     },
     "devDependencies": {
+        "@types/react": "^16.0.0",
         "@daybrush/builder": "^0.1.2",
         "print-sizes": "^0.1.0",
         "rollup": "^1.29.0",
