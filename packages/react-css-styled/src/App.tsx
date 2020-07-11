@@ -444,7 +444,7 @@ const Styler2 = styled("div", ".a {}");
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Styler ref={ref(window, "a")}/>
+      <Styler ref={ref(window, "a")} cspNonce="a"/>
       <Styler ref={ref(window, "b")}/>
       <Styler2 ref={ref(window, "a2")}/>
       <Styler2 ref={ref(window, "b2")}/>

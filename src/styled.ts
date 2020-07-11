@@ -1,5 +1,5 @@
 import { getHash, injectStyle, getShadowRoot } from "./utils";
-import { StyledInjector } from "./types";
+import { StyledInjector, InjectOptions } from "./types";
 
 export default function styled(css: string): StyledInjector {
     const injectClassName = "rCS" + getHash(css);
@@ -8,17 +8,17 @@ export default function styled(css: string): StyledInjector {
 
     return {
         className: injectClassName,
-        inject(el: HTMLElement | SVGElement) {
+        inject(el: HTMLElement | SVGElement, options: Partial<InjectOptions> = {}) {
             const shadowRoot = getShadowRoot(el);
             const firstMount = injectCount === 0;
             let styleElement: HTMLStyleElement;
 
             if (shadowRoot || firstMount) {
-                styleElement = injectStyle(injectClassName, css, shadowRoot);
+                styleElement = injectStyle(injectClassName, css, options, shadowRoot);
             }
             if (firstMount) {
                 injectElement = styleElement;
-              }
+            }
             if (!shadowRoot) {
                 ++injectCount;
             }
