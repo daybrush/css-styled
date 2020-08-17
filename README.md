@@ -18,15 +18,9 @@ $ npm install css-styled
 ```
 
 ### scripts
-* Unpackaged
 
 ```html
 <script src="//daybrush.com/css-styled/release/latest/dist/css-styled.min.js"></script>
-```
-
-* Packaged
-```html
-<script src="//daybrush.com/css-styled/release/latest/dist/css-styled.pkgd.min.js"></script>
 ```
 
 ## 🚀 How to use

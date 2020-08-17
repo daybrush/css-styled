@@ -6,7 +6,7 @@ export function getHash(str: string) {
     return stringHash(str).toString(36);
 }
 export function getShadowRoot(parentElement: HTMLElement | SVGElement) {
-    if (parentElement.getRootNode) {
+    if (parentElement && parentElement.getRootNode) {
         const rootNode = parentElement.getRootNode();
 
         if (rootNode.nodeType === 11) {

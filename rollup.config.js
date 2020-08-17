@@ -11,20 +11,11 @@ export default builder([
     {
         ...defaultConfig,
         output: "./dist/styled.js",
-    },
-    {
-        ...defaultConfig,
-        output: "./dist/styled.min.js",
-        uglify: true,
-    },
-    {
-        ...defaultConfig,
-        output: "./dist/styled.pkgd.js",
         resolve: true,
     },
     {
         ...defaultConfig,
-        output: "./dist/styled.pkgd.min.js",
+        output: "./dist/styled.min.js",
         resolve: true,
         uglify: true,
     },
