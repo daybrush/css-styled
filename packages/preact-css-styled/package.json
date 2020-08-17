@@ -1,0 +1,66 @@
+{
+    "name": "preact-css-styled",
+    "version": "0.2.0",
+    "description": "This component is a lightweight, simple line style component.",
+    "main": "./dist/styled.cjs.js",
+    "module": "./dist/styled.esm.js",
+    "sideEffects": false,
+    "types": "declaration/index.d.ts",
+    "keywords": [
+        "styled",
+        "inline-style",
+        "styled-components",
+        "style",
+        "css",
+        "styler",
+        "preact"
+    ],
+    "dependencies": {
+        "css-styled": "^0.1.7",
+        "framework-utils": "^0.3.4"
+    },
+    "peerDependencies": {
+        "framework-utils": ">=0.3.4"
+    },
+    "devDependencies": {
+        "@daybrush/builder": "^0.1.2",
+        "preact": "^10.0.0",
+        "print-sizes": "0.0.4",
+        "react-css-styled": "^0.2.0",
+        "rollup": "^1.27.0",
+        "rollup-plugin-css-bundle": "^1.0.4",
+        "rollup-plugin-preact": "^0.5.2",
+        "tslint": "^5.18.0",
+        "typescript": "^3.5.2"
+    },
+    "scripts": {
+        "start": "open ./public/index.html && rollup -c rollup.config.demo.js -w",
+        "build": "rollup -c && npm run declaration && print-sizes ./dist ",
+        "declaration": "rm -rf declaration && tsc -p tsconfig.declaration.json"
+    },
+    "author": "Daybrush",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/daybrush/css-styled/tree/master/packages/preact-css-styled"
+    },
+    "bugs": {
+        "url": "https://github.com/daybrush/css-styled/issues"
+    },
+    "homepage": "https://github.com/daybrush/css-styled#readme",
+    "eslintConfig": {
+        "extends": "preact-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}
