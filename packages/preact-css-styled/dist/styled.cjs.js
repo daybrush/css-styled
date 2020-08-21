@@ -4,7 +4,7 @@ name: preact-css-styled
 license: MIT
 author: Daybrush
 repository: https://github.com/daybrush/css-styled/tree/master/packages/preact-css-styled
-version: 0.2.0
+version: 0.2.1
 */
 'use strict';
 

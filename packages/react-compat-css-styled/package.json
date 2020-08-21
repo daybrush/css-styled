@@ -1,6 +1,6 @@
 {
     "name": "react-compat-css-styled",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "This component is a lightweight, simple line style component for react-compat",
     "main": "./dist/styled.cjs.js",
     "module": "./dist/styled.esm.js",

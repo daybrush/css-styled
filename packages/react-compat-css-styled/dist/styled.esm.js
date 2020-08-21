@@ -4,7 +4,7 @@ name: react-compat-css-styled
 license: MIT
 author: Daybrush
 repository: git+https://github.com/daybrush/css-styled.git
-version: 0.2.0
+version: 0.2.1
 */
 import { createElement, Component } from 'react-simple-compat';
 import { ref } from 'framework-utils';
