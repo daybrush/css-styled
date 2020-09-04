@@ -1,7 +1,11 @@
 import { getHash, injectStyle, getShadowRoot } from "./utils";
 import { StyledInjector, InjectOptions } from "./types";
 
-export default function styled(css: string): StyledInjector {
+/**
+ * Create an styled object that can be defined and inserted into the css.
+ * @param - css styles
+ */
+function styled(css: string): StyledInjector {
     const injectClassName = "rCS" + getHash(css);
     let injectCount = 0;
     let injectElement!: HTMLStyleElement;
@@ -43,3 +47,4 @@ export default function styled(css: string): StyledInjector {
 }
 
 export * from "./types";
+export default styled;
