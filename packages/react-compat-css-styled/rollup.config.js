@@ -19,7 +19,7 @@ const reactPlugin = reactCompat({
 export default builder([
     {
         sourcemap: false,
-        input: "src/index.ts",
+        input: "src/index.esm.ts",
         output: "./dist/styled.esm.js",
         exports: "default",
         format: "es",
@@ -28,7 +28,7 @@ export default builder([
     },
     {
         sourcemap: false,
-        input: "src/index.ts",
+        input: "src/index.umd.ts",
         output: "./dist/styled.cjs.js",
         exports: "default",
         plugins: [reactPlugin],

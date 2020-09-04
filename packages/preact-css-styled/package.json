@@ -35,8 +35,9 @@
     },
     "scripts": {
         "start": "open ./public/index.html && rollup -c rollup.config.demo.js -w",
-        "build": "rollup -c && npm run declaration && print-sizes ./dist ",
-        "declaration": "rm -rf declaration && tsc -p tsconfig.declaration.json"
+        "build": "rollup -c && npm run declaration && npm run declaration:cp && print-sizes ./dist ",
+        "declaration": "rm -rf declaration && tsc -p tsconfig.declaration.json",
+        "declaration:cp": "cp src/preact-css-styled/styled.d.ts declaration/styled.d.ts"
     },
     "author": "Daybrush",
     "license": "MIT",

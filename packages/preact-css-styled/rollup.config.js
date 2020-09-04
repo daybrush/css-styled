@@ -28,14 +28,14 @@ const defaultOptions = {
 export default builder([
     {
         ...defaultOptions,
-        input: "src/preact-css-styled/styled.ts",
+        input: "src/preact-css-styled/index.esm.ts",
         output: "./dist/styled.esm.js",
-        exports: "default",
+        exports: "named",
         format: "es",
     },
     {
         ...defaultOptions,
-        input: "src/preact-css-styled/styled.ts",
+        input: "src/preact-css-styled/index.umd.ts",
         output: "./dist/styled.cjs.js",
         exports: "default",
         format: "cjs",

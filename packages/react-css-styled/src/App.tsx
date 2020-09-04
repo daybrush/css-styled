@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import styled from './react-css-styled';
+import styled, { StyledElement } from './react-css-styled';
 import { ref } from 'framework-utils';
 
 const css = `
@@ -442,14 +442,15 @@ const Styler = styled("div", css);
 const Styler2 = styled("div", ".a {}");
 
 const App: React.FC = () => {
-  return (
-    <div className="App">
-      <Styler ref={ref(window, "a")} cspNonce="a"/>
-      <Styler ref={ref(window, "b")}/>
-      <Styler2 ref={ref(window, "a2")}/>
-      <Styler2 ref={ref(window, "b2")}/>
-    </div>
-  );
+    const ref1 = React.useRef<StyledElement<HTMLDivElement>>(null);
+    return (
+        <div className="App">
+            <Styler ref={ref1} cspNonce="a" />
+            <Styler ref={ref(window, "b")} />
+            <Styler2 ref={ref(window, "a2")} />
+            <Styler2 ref={ref(window, "b2")} />
+        </div>
+    );
 }
 
 export default App;

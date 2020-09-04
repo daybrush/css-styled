@@ -1,4 +1,4 @@
 import styled from "./styled";
 
-export * from "./types";
+export { StyledElement } from "./StyledElement";
 export default styled;

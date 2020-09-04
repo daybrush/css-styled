@@ -1,40 +1,12 @@
-import { Component, createElement } from "react";
-import { IObject } from "@daybrush/utils";
-import { ref } from "framework-utils";
-import cssStyled, { InjectResult } from "css-styled";
+import cssStyled from "css-styled";
+import { StyledElement } from "./StyledElement";
 
-export default function styled<T extends HTMLElement | SVGElement = HTMLElement>(Tag: string, css: string) {
+export default function styled<T extends HTMLElement | SVGElement = HTMLElement>(
+    tag: string, css: string): typeof StyledElement & (new (...args: any[]) => StyledElement<T>) {
     const injector = cssStyled(css);
 
-    return class Styled extends Component<IObject<any>> {
-        public static injector = injector;
-        public element!: T;
-        public injectResult!: InjectResult | null;
-        public render() {
-            const {
-                className = "",
-                cspNonce,
-                ...attributes
-            } = this.props;
-            const cssId = injector.className;
-            return createElement(Tag, {
-                "ref": ref(this, "element"),
-                "data-styled-id": cssId,
-                "className": `${className} ${cssId}`,
-                ...attributes,
-            });
-        }
-        public componentDidMount() {
-            this.injectResult = injector.inject(this.element, {
-                nonce: this.props.cspNonce,
-            });
-        }
-        public componentWillUnmount() {
-            this.injectResult!.destroy();
-            this.injectResult = null;
-        }
-        public getElement() {
-            return this.element;
-        }
+    return class Styled extends StyledElement<T> {
+        public injector = injector;
+        public tag = tag;
     };
 }
