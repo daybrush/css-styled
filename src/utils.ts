@@ -15,6 +15,28 @@ export function getShadowRoot(parentElement: HTMLElement | SVGElement) {
     }
     return;
 }
+export function replaceStyle(className: string, css: string, options: Partial<InjectOptions>) {
+    if (options.original) {
+        return css;
+    }
+    return css.replace(/([^};{\s}][^};{]*|^\s*){/mg, (_, selector) => {
+        const trimmedSelector = selector.trim();
+        return (trimmedSelector ? splitComma(trimmedSelector) : [""]).map(subSelector => {
+            const trimmedSubSelector = subSelector.trim();
+            if (trimmedSubSelector.indexOf("@") === 0) {
+                return trimmedSubSelector;
+            } else if (trimmedSubSelector.indexOf(":global") > -1) {
+                return trimmedSubSelector.replace(/\:global/g, "");
+            } else if (trimmedSubSelector.indexOf(":host") > -1) {
+                return `${trimmedSubSelector.replace(/\:host/g, `.${className}`)}`;
+            } else if (trimmedSubSelector) {
+                return `.${className} ${trimmedSubSelector}`;
+            } else {
+                return `.${className}`;
+            }
+        }).join(", ") + " {";
+    });
+}
 export function injectStyle(className: string, css: string, options: Partial<InjectOptions>, shadowRoot?: Node) {
     const style = document.createElement("style");
 
@@ -24,20 +46,7 @@ export function injectStyle(className: string, css: string, options: Partial<Inj
     if (options.nonce) {
         style.setAttribute("nonce", options.nonce);
     }
-    let styleCSS = css;
-    if (!options.original) {
-        styleCSS = css.replace(/([^}{]*){/mg, (all, selector) => {
-            return splitComma(selector).map(subSelector => {
-                if (subSelector.indexOf(":global") > -1) {
-                    return subSelector.replace(/\:global/g, "");
-                } else if (subSelector.indexOf(":host") > -1) {
-                    return `${subSelector.replace(/\:host/g, `.${className}`)}`;
-                }
-                return `.${className} ${subSelector}`;
-            }).join(", ") + "{";
-        });
-    }
-    style.innerHTML = styleCSS;
+    style.innerHTML = replaceStyle(className, css, options);
 
     (shadowRoot || document.head || document.body).appendChild(style);
     return style;
