@@ -21,7 +21,7 @@ export default builder([
         sourcemap: false,
         input: "src/index.esm.ts",
         output: "./dist/styled.esm.js",
-        exports: "default",
+        exports: "named",
         format: "es",
         plugins: [reactPlugin],
         external,
