@@ -1,6 +1,6 @@
 {
     "name": "css-styled",
-    "version": "0.2.6",
+    "version": "1.0.0",
     "description": "This component is a lightweight, simple line style component.",
     "main": "./dist/styled.cjs.js",
     "module": "./dist/styled.esm.js",
@@ -12,10 +12,10 @@
         "declaration": "rm -rf declaration && tsc -p tsconfig.declaration.json",
         "doc": "rm -rf ./doc && jsdoc -c jsdoc.json",
         "test": "jest --watchAll",
-        "coverage": "jest --coverage && print-coveralls --sort=desc",
-        "prerelease": "npm run build && prerelease --dirs=dist",
-        "release": "npm run build && release --dirs=dist",
-        "release:init": "npm run build && release -i --dirs=dist",
+        "coverage": "jest --coverage && print-coveralls --sort=desc,doc",
+        "prerelease": "npm run build && npm run doc && prerelease --dirs=dist,doc",
+        "release": "npm run build && npm run doc && release --dirs=dist",
+        "release:init": "npm run build && npm run doc && release -i --dirs=dist",
         "packages": "pvu --path=packages --update=react-css-styled --build=react-css-styled --publish=react-css-styled"
     },
     "repository": {

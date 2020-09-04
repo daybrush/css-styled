@@ -1,6 +1,6 @@
 {
     "name": "preact-css-styled",
-    "version": "0.3.0",
+    "version": "1.0.0",
     "description": "This component is a lightweight, simple line style component.",
     "main": "./dist/styled.cjs.js",
     "module": "./dist/styled.esm.js",
@@ -16,7 +16,7 @@
         "preact"
     ],
     "dependencies": {
-        "css-styled": "^0.1.7",
+        "css-styled": "^1.0.0",
         "framework-utils": "^0.3.4"
     },
     "peerDependencies": {
@@ -26,7 +26,7 @@
         "@daybrush/builder": "^0.1.2",
         "preact": "^10.0.0",
         "print-sizes": "0.0.4",
-        "react-css-styled": "^0.3.1",
+        "react-css-styled": "^1.0.0",
         "rollup": "^1.27.0",
         "rollup-plugin-css-bundle": "^1.0.4",
         "rollup-plugin-preact": "^0.5.2",
