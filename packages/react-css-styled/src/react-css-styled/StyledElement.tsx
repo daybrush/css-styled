@@ -1,4 +1,4 @@
-import { Component, createElement } from "react";
+import { Component, createElement, version } from "react";
 import { IObject } from "@daybrush/utils";
 import { StyledInjector, InjectResult } from "css-styled";
 import { ref } from "framework-utils";
@@ -12,14 +12,22 @@ export class StyledElement<T extends HTMLElement | SVGElement = HTMLElement> ext
         const {
             className = "",
             cspNonce,
+            portalContainer,
             ...attributes
         } = this.props;
         const cssId = this.injector!.className;
         const Tag = this.tag;
+        let portalAttributes: Record<string, any> = {};
+
+        if (version.indexOf("simple") > -1 && portalContainer) {
+            portalAttributes = { portalContainer };
+        }
+
         return createElement(Tag, {
             "ref": ref(this, "element"),
             "data-styled-id": cssId,
             "className": `${className} ${cssId}`,
+            ...portalAttributes,
             ...attributes,
         });
     }

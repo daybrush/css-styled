@@ -1,4 +1,4 @@
-import { Component } from "preact";
+import { Component, version } from "preact";
 import { IObject } from "@daybrush/utils";
 import { StyledInjector, InjectResult } from "css-styled";
 export declare class StyledElement<T extends HTMLElement | SVGElement> extends Component<IObject<any>> {
