@@ -1,6 +1,6 @@
 {
   "name": "react-css-styled",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This component is a lightweight, simple line style component for react.",
   "main": "./dist/styled.cjs.js",
   "module": "./dist/styled.esm.js",

@@ -19,7 +19,7 @@ export class StyledElement<T extends HTMLElement | SVGElement = HTMLElement> ext
         const Tag = this.tag;
         let portalAttributes: Record<string, any> = {};
 
-        if (version.indexOf("simple") > -1 && portalContainer) {
+        if ((version || "").indexOf("simple") > -1 && portalContainer) {
             portalAttributes = { portalContainer };
         }
 
