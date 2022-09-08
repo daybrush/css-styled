@@ -1,6 +1,6 @@
 {
     "name": "css-styled",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "This component is a lightweight, simple line style component.",
     "main": "./dist/styled.cjs.js",
     "module": "./dist/styled.esm.js",
@@ -29,7 +29,7 @@
     },
     "homepage": "https://github.com/daybrush/css-styled#readme",
     "dependencies": {
-        "@daybrush/utils": "^1.0.0",
+        "@daybrush/utils": ">=1.0.0",
         "string-hash": "^1.1.3"
     },
     "devDependencies": {
@@ -41,7 +41,7 @@
         "jest": "^26.4.2",
         "print-coveralls": "^1.2.2",
         "print-sizes": "^0.1.0",
-        "pvu": "^0.4.1",
+        "pvu": "^0.6.1",
         "ts-jest": "^26.3.0",
         "tslint": "^5.20.1",
         "typescript": "^3.7.4"

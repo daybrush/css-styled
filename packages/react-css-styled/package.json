@@ -1,6 +1,6 @@
 {
   "name": "react-css-styled",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "This component is a lightweight, simple line style component for react.",
   "main": "./dist/styled.cjs.js",
   "module": "./dist/styled.esm.js",
@@ -15,17 +15,17 @@
     "styler"
   ],
   "dependencies": {
-    "css-styled": "^1.0.0",
+    "css-styled": "~1.0.1",
     "framework-utils": "^1.1.0"
   },
   "devDependencies": {
-    "@daybrush/builder": "^0.1.1",
+    "@daybrush/builder": "^0.1.2",
     "@types/node": "12.0.8",
     "@types/react": "16.8.20",
     "@types/react-dom": "16.8.4",
     "@types/string-hash": "^1.1.1",
-    "print-sizes": "^0.1.0",
-    "pvu": "^0.4.1",
+    "print-sizes": "^0.2.0",
+    "pvu": "^0.6.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^3.0.1",
