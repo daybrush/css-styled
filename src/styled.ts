@@ -29,7 +29,7 @@ function styled(css: string): StyledInjector {
             return {
                 destroy() {
                     if (shadowRoot) {
-                        el.removeChild(styleElement);
+                        shadowRoot.removeChild(styleElement);
                         styleElement = null;
                     } else {
                         if (injectCount > 0) {
