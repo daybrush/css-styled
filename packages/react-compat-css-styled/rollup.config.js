@@ -28,9 +28,9 @@ export default builder([
     },
     {
         sourcemap: false,
-        input: "src/index.umd.ts",
+        input: "src/index.cjs.ts",
         output: "./dist/styled.cjs.js",
-        exports: "default",
+        exports: "named",
         plugins: [reactPlugin],
         format: "cjs",
         external,

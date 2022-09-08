@@ -26,7 +26,9 @@ export default builder([
     },
     {
         ...defaultConfig,
+        input: "src/index.cjs.ts",
         output: "./dist/styled.cjs.js",
         format: "cjs",
+        exports: "named",
     },
 ]);

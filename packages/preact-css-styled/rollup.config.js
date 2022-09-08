@@ -35,9 +35,9 @@ export default builder([
     },
     {
         ...defaultOptions,
-        input: "src/preact-css-styled/index.umd.ts",
+        input: "src/preact-css-styled/index.cjs.ts",
         output: "./dist/styled.cjs.js",
-        exports: "default",
+        exports: "named",
         format: "cjs",
     },
 ]);

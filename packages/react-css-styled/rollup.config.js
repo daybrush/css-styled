@@ -19,9 +19,9 @@ export default builder([
     },
     {
         tsconfig: "tsconfig.build.json",
-        input: "src/react-css-styled/index.umd.ts",
+        input: "src/react-css-styled/index.cjs.ts",
         output: "./dist/styled.cjs.js",
-        exports: "default",
+        exports: "named",
         format: "cjs",
         external,
     },
