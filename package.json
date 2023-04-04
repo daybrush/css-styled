@@ -1,22 +1,20 @@
 {
-    "name": "css-styled",
+    "name": "css-styled-root",
+    "private": true,
     "version": "1.0.1",
     "description": "This component is a lightweight, simple line style component.",
-    "main": "./dist/styled.cjs.js",
-    "module": "./dist/styled.esm.js",
-    "sideEffects": false,
-    "types": "declaration/styled.d.ts",
     "scripts": {
-        "start": "rollup -c -w",
-        "build": "rollup -c && npm run declaration && print-sizes ./dist",
-        "declaration": "rm -rf declaration && tsc -p tsconfig.declaration.json",
+        "build": "npm run build --prefix ./packages/css-styled",
+        "packages:update": "lerna-helper version",
+        "packages:build": "lerna run build",
+        "packages:publish": "lerna-helper publish --commit 'chore: publish packages'",
+        "demo:build": "npm run packages:build && npm run doc",
+        "changelog": "lerna-helper changelog --type all --base css-styled",
+        "changelog:root": "lerna-helper changelog --type root --base css-styled",
         "doc": "rm -rf ./doc && jsdoc -c jsdoc.json",
-        "test": "jest --watchAll",
-        "coverage": "jest --coverage && print-coveralls --sort=desc,doc",
-        "prerelease": "npm run build && npm run doc && prerelease --dirs=dist,doc",
-        "release": "npm run build && npm run doc && release --dirs=dist",
-        "release:init": "npm run build && npm run doc && release -i --dirs=dist",
-        "packages": "pvu --path=packages --update=react-css-styled --build=react-css-styled --publish=react-css-styled"
+        "predeploy": "lerna-helper deploy --base css-styled --pre",
+        "deploy": "lerna-helper deploy --base css-styled",
+        "release": "lerna-helper release --base css-styled"
     },
     "repository": {
         "type": "git",
@@ -28,25 +26,31 @@
         "url": "https://github.com/daybrush/css-styled/issues"
     },
     "homepage": "https://github.com/daybrush/css-styled#readme",
-    "dependencies": {
-        "@daybrush/utils": ">=1.0.0",
-        "string-hash": "^1.1.3"
-    },
     "devDependencies": {
-        "@daybrush/builder": "^0.1.2",
-        "@daybrush/jsdoc": "^0.3.7",
-        "@daybrush/release": "^0.2.4",
-        "@types/jest": "^26.0.13",
-        "daybrush-jsdoc-template": "^1.6.0",
-        "jest": "^26.4.2",
-        "print-coveralls": "^1.2.2",
-        "print-sizes": "^0.1.0",
-        "pvu": "^0.6.1",
-        "ts-jest": "^26.3.0",
-        "tslint": "^5.20.1",
-        "typescript": "^3.7.4"
+        "@daybrush/jsdoc": "^0.4.5",
+        "@daybrush/release": "^0.7.0",
+        "cpx": "1.5.0",
+        "daybrush-jsdoc-template": "^1.9.0",
+        "gh-pages": "^2.0.1",
+        "intercept-stdout": "0.1.2",
+        "lerna": "^4.0.0",
+        "lerna-changelog": "2.2.0",
+        "typescript": "^4.5.0 <4.6.0"
     },
-    "peerDependencies": {
-        "@daybrush/utils": ">=1.0.0"
+    "workspaces": {
+        "packages": [
+            "packages/*",
+            "packages/ngx-infinite-viewer/projects/ngx-infinite-viewer"
+        ]
+    },
+    "resolutions": {
+        "@daybrush/utils": "^1.11.0",
+        "typescript": "^4.5.0 <4.6.0",
+        "tslib": "^2.3.0"
+    },
+    "overrides": {
+        "@daybrush/utils": "^1.11.0",
+        "typescript": "^4.5.0 <4.6.0",
+        "tslib": "^2.3.0"
     }
 }

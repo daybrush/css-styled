@@ -1,3 +1,3 @@
-import styled, { StyledElement } from "react-css-styled";
-export { StyledElement };
-export default styled;
+import defaultStyled, { StyledElement, styled } from "react-css-styled";
+export { StyledElement, styled };
+export default defaultStyled;

@@ -25,7 +25,6 @@
     "@types/react-dom": "16.8.4",
     "@types/string-hash": "^1.1.1",
     "print-sizes": "^0.2.0",
-    "pvu": "^0.6.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^3.0.1",
@@ -33,13 +32,9 @@
     "typescript": "^3.5.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "rollup -c && npm run declaration && print-sizes ./dist ",
-    "declaration": "rm -rf declaration && tsc -p tsconfig.declaration.json",
-    "packages": "npm run packages:update && npm run packages:build && npm run packages:publish",
-    "packages:update": "pvu --path=../ --update=preact-css-styled,react-compat-css-styled",
-    "packages:build": "pvu --path=../ --build=preact-css-styled,react-compat-css-styled",
-    "packages:publish": "pvu --path=../ --publish=preact-css-styled,react-compat-css-styled"
+    "start": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
+    "build": "rollup -c && npm run declaration && print-sizes ./dist",
+    "declaration": "rm -rf declaration && tsc -p tsconfig.declaration.json"
   },
   "author": "Daybrush",
   "license": "MIT",

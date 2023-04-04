@@ -14,3 +14,4 @@ export declare class StyledElement<T extends HTMLElement | SVGElement> extends C
 
 
 export default function styled<T extends HTMLElement | SVGElement = HTMLElement>(tag: string, css: string): typeof StyledElement & (new (...args: any[]) => StyledElement<T>);
+export function styled<T extends HTMLElement | SVGElement = HTMLElement>(tag: string, css: string): typeof StyledElement & (new (...args: any[]) => StyledElement<T>);

@@ -1,6 +1,7 @@
 import { Component } from "react-simple-compat";
 import { IObject } from "@daybrush/utils";
 import { StyledInjector, InjectResult } from "css-styled";
+
 export declare class StyledElement<T extends HTMLElement | SVGElement> extends Component<IObject<any>> {
     injector: StyledInjector;
     element: T;
@@ -14,3 +15,4 @@ export declare class StyledElement<T extends HTMLElement | SVGElement> extends C
 
 
 export default function styled<T extends HTMLElement | SVGElement = HTMLElement>(tag: string, css: string): typeof StyledElement & (new (...args: any[]) => StyledElement<T>);
+export function styled<T extends HTMLElement | SVGElement = HTMLElement>(tag: string, css: string): (...args: any[]) => any;
