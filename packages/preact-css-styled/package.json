@@ -23,7 +23,7 @@
         "@daybrush/builder": "^0.1.2",
         "preact": "^10.0.0",
         "print-sizes": "^0.2.0",
-        "react-css-styled": "~1.0.0",
+        "react-css-styled": "~1.1.0",
         "rollup": "^1.27.0",
         "rollup-plugin-css-bundle": "^1.0.4",
         "rollup-plugin-preact": "^0.5.2",
