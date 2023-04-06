@@ -1,4 +1,4 @@
-import { Component } from "react-simple-compat";
+import { Component } from "croact";
 import { IObject } from "@daybrush/utils";
 import { StyledInjector, InjectResult } from "css-styled";
 
