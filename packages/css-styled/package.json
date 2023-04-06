@@ -20,6 +20,13 @@
     "bugs": {
         "url": "https://github.com/daybrush/css-styled/issues"
     },
+    "files": [
+        "./*",
+        "src/*",
+        "dist/*",
+        "declaration/*",
+        "README.md"
+    ],
     "homepage": "https://github.com/daybrush/css-styled#readme",
     "dependencies": {
         "@daybrush/utils": "^1.11.0",
