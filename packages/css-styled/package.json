@@ -29,14 +29,14 @@
     ],
     "homepage": "https://github.com/daybrush/css-styled#readme",
     "dependencies": {
-        "@daybrush/utils": "^1.11.0",
-        "string-hash": "^1.1.3"
+        "@daybrush/utils": "^1.11.0"
     },
     "devDependencies": {
         "@daybrush/builder": "^0.1.2",
         "jest": "^26.4.2",
         "print-coveralls": "^1.2.2",
         "print-sizes": "^0.2.0",
-        "typescript": "^4.5.0 <4.6.0"
+        "typescript": "^4.5.0 <4.6.0",
+        "string-hash": "^1.1.3"
     }
 }

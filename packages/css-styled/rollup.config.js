@@ -22,6 +22,7 @@ export default builder([
     {
         ...defaultConfig,
         output: "./dist/styled.esm.js",
+        resolve: true,
         format: "es",
     },
     {
