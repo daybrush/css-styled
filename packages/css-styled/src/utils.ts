@@ -10,7 +10,7 @@ export function getShadowRoot(parentElement: HTMLElement | SVGElement) {
         const rootNode = parentElement.getRootNode();
 
         if (rootNode.nodeType === 11) {
-            return rootNode;
+            return rootNode as ShadowRoot;
         }
     }
     return;
@@ -42,6 +42,7 @@ export function injectStyle(className: string, css: string, options: Partial<Inj
 
     style.setAttribute("type", "text/css");
     style.setAttribute("data-styled-id", className);
+    style.setAttribute("data-styled-count", "0");
 
     if (options.nonce) {
         style.setAttribute("nonce", options.nonce);

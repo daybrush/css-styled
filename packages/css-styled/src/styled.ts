@@ -7,38 +7,28 @@ import { StyledInjector, InjectOptions } from "./types";
  */
 function styled(css: string): StyledInjector {
     const injectClassName = "rCS" + getHash(css);
-    let injectCount = 0;
-    let injectElement!: HTMLStyleElement;
 
     return {
         className: injectClassName,
         inject(el: HTMLElement | SVGElement, options: Partial<InjectOptions> = {}) {
             const shadowRoot = getShadowRoot(el);
-            const firstMount = injectCount === 0;
-            let styleElement: HTMLStyleElement;
+            let styleElement = (shadowRoot || document).querySelector<HTMLStyleElement>(`[data-styled-id="${injectClassName}"]`);
 
-            if (shadowRoot || firstMount) {
+            if (!styleElement) {
                 styleElement = injectStyle(injectClassName, css, options, shadowRoot);
-            }
-            if (firstMount) {
-                injectElement = styleElement;
-            }
-            if (!shadowRoot) {
-                ++injectCount;
+            } else {
+                const count = parseFloat(styleElement.getAttribute("data-styled-count")) || 0;
+                styleElement.setAttribute("data-styled-count", `${count + 1}`);
             }
             return {
                 destroy() {
-                    if (shadowRoot) {
-                        shadowRoot.removeChild(styleElement);
+                    const injectCount = parseFloat(styleElement.getAttribute("data-styled-count")) || 0;
+
+                    if (injectCount <= 1) {
+                        styleElement.parentNode!.removeChild(styleElement);
                         styleElement = null;
                     } else {
-                        if (injectCount > 0) {
-                            --injectCount;
-                        }
-                        if (injectCount === 0 && injectElement) {
-                            injectElement.parentNode!.removeChild(injectElement);
-                            injectElement = null;
-                        }
+                        styleElement.setAttribute("data-styled-count", `${injectCount - 1}`);
                     }
                 },
             };
