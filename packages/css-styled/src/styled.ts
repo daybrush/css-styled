@@ -12,7 +12,7 @@ function styled(css: string): StyledInjector {
         className: injectClassName,
         inject(el: HTMLElement | SVGElement, options: Partial<InjectOptions> = {}) {
             const shadowRoot = getShadowRoot(el);
-            let styleElement = (shadowRoot || document).querySelector<HTMLStyleElement>(`[data-styled-id="${injectClassName}"]`);
+            let styleElement = (shadowRoot || document).querySelector<HTMLStyleElement>(`style[data-styled-id="${injectClassName}"]`);
 
             if (!styleElement) {
                 styleElement = injectStyle(injectClassName, css, options, shadowRoot);
