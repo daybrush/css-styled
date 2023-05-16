@@ -22,8 +22,11 @@ export default builder([
     {
         ...defaultConfig,
         output: "./dist/styled.esm.js",
-        resolve: true,
         format: "es",
+        resolve: true,
+        external: {
+            "@daybrush/utils": "@daybrush/utils",
+        },
     },
     {
         ...defaultConfig,
@@ -31,5 +34,9 @@ export default builder([
         output: "./dist/styled.cjs.js",
         format: "cjs",
         exports: "named",
+        resolve: true,
+        external: {
+            "@daybrush/utils": "@daybrush/utils",
+        },
     },
 ]);
