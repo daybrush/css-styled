@@ -42,7 +42,7 @@ export function injectStyle(className: string, css: string, options: Partial<Inj
 
     style.setAttribute("type", "text/css");
     style.setAttribute("data-styled-id", className);
-    style.setAttribute("data-styled-count", "0");
+    style.setAttribute("data-styled-count", "1");
 
     if (options.nonce) {
         style.setAttribute("nonce", options.nonce);

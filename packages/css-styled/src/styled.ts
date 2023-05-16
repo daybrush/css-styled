@@ -25,7 +25,11 @@ function styled(css: string): StyledInjector {
                     const injectCount = parseFloat(styleElement.getAttribute("data-styled-count")) || 0;
 
                     if (injectCount <= 1) {
-                        styleElement.parentNode!.removeChild(styleElement);
+                        if (styleElement.remove) {
+                            styleElement.remove();
+                        } else {
+                            styleElement.parentNode?.removeChild(styleElement);
+                        }
                         styleElement = null;
                     } else {
                         styleElement.setAttribute("data-styled-count", `${injectCount - 1}`);
