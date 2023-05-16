@@ -1,6 +1,6 @@
 {
     "name": "css-styled",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "This component is a lightweight, simple line style component.",
     "main": "./dist/styled.cjs.js",
     "module": "./dist/styled.esm.js",
