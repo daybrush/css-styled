@@ -37,7 +37,7 @@ export function replaceStyle(className: string, css: string, options: Partial<In
         }).join(", ") + " {";
     });
 }
-export function injectStyle(className: string, css: string, options: Partial<InjectOptions>, shadowRoot?: Node) {
+export function injectStyle(className: string, css: string, options: Partial<InjectOptions>, el: Node, shadowRoot?: Node) {
     const style = document.createElement("style");
 
     style.setAttribute("type", "text/css");
@@ -49,6 +49,7 @@ export function injectStyle(className: string, css: string, options: Partial<Inj
     }
     style.innerHTML = replaceStyle(className, css, options);
 
-    (shadowRoot || document.head || document.body).appendChild(style);
+    const ownerDocument = el.ownerDocument || document;
+    (shadowRoot || ownerDocument.head || ownerDocument.body).appendChild(style);
     return style;
 }
