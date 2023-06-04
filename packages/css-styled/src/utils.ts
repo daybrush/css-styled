@@ -1,5 +1,5 @@
 import stringHash from "string-hash";
-import { splitComma } from "@daybrush/utils";
+import { getDocument, splitComma } from "@daybrush/utils";
 import { InjectOptions } from "./types";
 
 export function getHash(str: string) {
@@ -38,7 +38,8 @@ export function replaceStyle(className: string, css: string, options: Partial<In
     });
 }
 export function injectStyle(className: string, css: string, options: Partial<InjectOptions>, el: Node, shadowRoot?: Node) {
-    const style = document.createElement("style");
+    const doc = getDocument(el);
+    const style = doc.createElement("style");
 
     style.setAttribute("type", "text/css");
     style.setAttribute("data-styled-id", className);
@@ -49,7 +50,6 @@ export function injectStyle(className: string, css: string, options: Partial<Inj
     }
     style.innerHTML = replaceStyle(className, css, options);
 
-    const ownerDocument = el.ownerDocument || document;
-    (shadowRoot || ownerDocument.head || ownerDocument.body).appendChild(style);
+    (shadowRoot || doc.head || doc.body).appendChild(style);
     return style;
 }

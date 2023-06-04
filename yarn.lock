@@ -1306,10 +1306,10 @@
   dependencies:
     prototype-minify "^1.0.0"
 
-"@daybrush/utils@^0.10.0", "@daybrush/utils@^0.11.0", "@daybrush/utils@^1.0.0", "@daybrush/utils@^1.11.0", "@daybrush/utils@^1.6.0":
-  version "1.11.0"
-  resolved "https://registry.npmjs.org/@daybrush/utils/-/utils-1.11.0.tgz#ad23a431fdb8f95ab4bb34fb6d080f2f7997a988"
-  integrity sha512-/T0Oe7KkfUoCusFj1cJ6N+Tu+jFZXVkaKqDBcDY3P0goJfcfaT+4+oG8aHi4LDgBErNjP6uvC3IEOSMe2ka/yQ==
+"@daybrush/utils@^0.10.0", "@daybrush/utils@^0.11.0", "@daybrush/utils@^1.11.0", "@daybrush/utils@^1.13.0", "@daybrush/utils@^1.6.0":
+  version "1.13.0"
+  resolved "https://registry.npmjs.org/@daybrush/utils/-/utils-1.13.0.tgz#ea70a60864130da476406fdd1d465e3068aea0ff"
+  integrity sha512-ALK12C6SQNNHw1enXK+UO8bdyQ+jaWNQ1Af7Z3FNxeAwjYhQT7do+TRE4RASAJ3ObaS2+TJ7TXR3oz2Gzbw0PQ==
 
 "@egjs/list-differ@^1.0.0":
   version "1.0.0"

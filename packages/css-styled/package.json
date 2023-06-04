@@ -29,7 +29,7 @@
     ],
     "homepage": "https://github.com/daybrush/css-styled#readme",
     "dependencies": {
-        "@daybrush/utils": "^1.11.0"
+        "@daybrush/utils": "^1.13.0"
     },
     "devDependencies": {
         "@daybrush/builder": "^0.1.2",

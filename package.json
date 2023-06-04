@@ -44,12 +44,12 @@
         ]
     },
     "resolutions": {
-        "@daybrush/utils": "^1.11.0",
+        "@daybrush/utils": "^1.13.0",
         "typescript": "^4.5.0 <4.6.0",
         "tslib": "^2.3.0"
     },
     "overrides": {
-        "@daybrush/utils": "^1.11.0",
+        "@daybrush/utils": "^1.13.0",
         "typescript": "^4.5.0 <4.6.0",
         "tslib": "^2.3.0"
     }
